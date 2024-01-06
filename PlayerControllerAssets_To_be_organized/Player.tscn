@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://1brucyyxikus"]
+
+[ext_resource type="Script" path="res://PlayerControllerAssets_To_be_organized/PlayerController.gd" id="1_eimhi"]
+[ext_resource type="PackedScene" uid="uid://dh1l5ycfxh11b" path="res://PlayerControllerAssets_To_be_organized/PlayerSprite.tscn" id="2_h6352"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rewqf"]
+radius = 5.30773
+height = 21.8749
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerSprite")]
+script = ExtResource("1_eimhi")
+playerSprite = NodePath("PlayerSprite")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+scale = Vector2(1.31883, 1.00572)
+shape = SubResource("CapsuleShape2D_rewqf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+offset = Vector2(2.08165e-12, -50)
+zoom = Vector2(2, 2)
+
+[node name="PlayerSprite" parent="." instance=ExtResource("2_h6352")]
+unique_name_in_owner = true
+position = Vector2(-1, 0)
+
+[node name="BulletCoolDown" type="Timer" parent="."]
+autostart = true
+
+[node name="GunEntryPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+
+[connection signal="timeout" from="BulletCoolDown" to="." method="_on_bullet_cool_down_timeout"]

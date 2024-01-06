@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://dh1l5ycfxh11b"]
+
+[ext_resource type="Script" path="res://PlayerControllerAssets_To_be_organized/PlayerAnimator.gd" id="1_3ry66"]
+[ext_resource type="Texture2D" uid="uid://hpkwbi672l5h" path="res://Assets/Sprites/Mini Pixel Pack 3/Player ship/player_ship-Sheet.png" id="2_58fay"]
+
+[sub_resource type="Animation" id="Animation_w5caq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0orvn"]
+resource_name = "dead"
+
+[sub_resource type="Animation" id="Animation_hltk0"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_khohj"]
+resource_name = "left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2c0ux"]
+resource_name = "right"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(4, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgn3i"]
+_data = {
+"RESET": SubResource("Animation_w5caq"),
+"dead": SubResource("Animation_0orvn"),
+"idle": SubResource("Animation_hltk0"),
+"left": SubResource("Animation_khohj"),
+"right": SubResource("Animation_2c0ux")
+}
+
+[node name="Player_Sprite" type="Node2D"]
+script = ExtResource("1_3ry66")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_58fay")
+hframes = 6
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_xgn3i")
+}
