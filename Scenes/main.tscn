@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6yfl0pk6bh5"]
+
+[ext_resource type="PackedScene" uid="uid://m0gfoyhrf4ej" path="res://Scenes/invader_spawn.tscn" id="1_q3q1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vbgs"]
+size = Vector2(379.5, 1176)
+
+[node name="main" type="Node"]
+
+[node name="Invader_Spawn" parent="." instance=ExtResource("1_q3q1v")]
+position = Vector2(18, 47)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Wall" type="Node" parent="."]
+
+[node name="RightWall" type="Area2D" parent="Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/RightWall"]
+position = Vector2(976.75, 167)
+shape = SubResource("RectangleShape2D_8vbgs")
+
+[node name="LeftWall" type="Area2D" parent="Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/LeftWall"]
+position = Vector2(1, 320)
+shape = SubResource("RectangleShape2D_8vbgs")
+
+[node name="TopWall" type="Area2D" parent="Wall"]
+position = Vector2(4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/TopWall"]
+position = Vector2(570, 3)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8vbgs")
+
+[connection signal="area_entered" from="Wall/RightWall" to="Invader_Spawn" method="_on_right_wall_area_entered"]
+[connection signal="area_entered" from="Wall/LeftWall" to="Invader_Spawn" method="_on_left_wall_area_entered"]

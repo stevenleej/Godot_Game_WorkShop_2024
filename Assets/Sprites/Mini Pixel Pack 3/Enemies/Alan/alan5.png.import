@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3aulgwgiqms1"
-path="res://.godot/imported/Lips (16 x 16).png-12bf7c68153108093fe13df8face0571.ctex"
+uid="uid://dcu0yr2es7x0u"
+path="res://.godot/imported/alan5.png-4001d8080b0d8131fe43a4a330647ab5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips (16 x 16).png"
-dest_files=["res://.godot/imported/Lips (16 x 16).png-12bf7c68153108093fe13df8face0571.ctex"]
+source_file="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan5.png"
+dest_files=["res://.godot/imported/alan5.png-4001d8080b0d8131fe43a4a330647ab5.ctex"]
 
 [params]
 

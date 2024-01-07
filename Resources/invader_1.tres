@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c0w8vxp4elnyx"]
+
+[ext_resource type="Script" path="res://Resources/invader_config.gd" id="1_a8i8t"]
+[ext_resource type="Texture2D" uid="uid://dbo6sux3vh30t" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan0.png" id="2_o6scn"]
+
+[resource]
+script = ExtResource("1_a8i8t")
+sprite = ExtResource("2_o6scn")
+width = 8
+animation_name = "move_1"
+points = 10

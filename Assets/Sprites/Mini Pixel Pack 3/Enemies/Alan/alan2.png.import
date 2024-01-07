@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxemumwmritko"
-path="res://.godot/imported/Bon_Bon (16 x 16).png-19942dfb5daefec68cebce22b2de52a2.ctex"
+uid="uid://p0a6l4qihtef"
+path="res://.godot/imported/alan2.png-75bc383d0e7cc230591b17495a7c3322.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Bon_Bon (16 x 16).png"
-dest_files=["res://.godot/imported/Bon_Bon (16 x 16).png-19942dfb5daefec68cebce22b2de52a2.ctex"]
+source_file="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan2.png"
+dest_files=["res://.godot/imported/alan2.png-75bc383d0e7cc230591b17495a7c3322.ctex"]
 
 [params]
 
