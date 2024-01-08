@@ -24,4 +24,4 @@ func _on_body_entered(body):
 	# 1 frame before lifecycle event ends
 	# check if a given code entity has some property or function
 	if body.has_method("take_damage"):
-		body.take_damage()
+		body.TakeDamage()

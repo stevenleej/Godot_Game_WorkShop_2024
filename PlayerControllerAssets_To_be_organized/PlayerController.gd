@@ -8,8 +8,11 @@ extends CharacterBody2D
 
 var laserBullet
 
-
 signal healthDepleted
+
+func TakeDamage() -> void:
+	if health > 0:
+		health -= 10
 
 func CheckIsMoving() -> void:
 	if direction.x > 0:
