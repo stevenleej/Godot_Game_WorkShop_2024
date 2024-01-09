@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="GameJamDingo_2024_SourceCode"
+run/main_scene="res://Scenes/invader_spawn.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="GameJamDingo_2024_SourceCode"
+
+[layer_names]
+
+2d_physics/layer_3="invader"
+2d_physics/layer_4="invader_projectile"
