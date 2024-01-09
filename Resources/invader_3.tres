@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ccjmvt5yjy7s3"]
+
+[ext_resource type="Script" path="res://Resources/invader_config.gd" id="1_mcuuw"]
+[ext_resource type="Texture2D" uid="uid://06dldppncip8" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips/lips0.png" id="2_ts74q"]
+
+[resource]
+script = ExtResource("1_mcuuw")
+sprite = ExtResource("2_ts74q")
+width = 8
+animation_name = "move_3"
+points = 10

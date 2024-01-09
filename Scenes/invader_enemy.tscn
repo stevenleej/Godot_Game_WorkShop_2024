@@ -1,0 +1,137 @@
+[gd_scene load_steps=28 format=3 uid="uid://1hev42o40x6e"]
+
+[ext_resource type="Script" path="res://Scenes/invader_enemy.gd" id="1_2t2jh"]
+[ext_resource type="Texture2D" uid="uid://dbo6sux3vh30t" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan0.png" id="2_w2igj"]
+[ext_resource type="Texture2D" uid="uid://dti54ijjrtwps" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan3.png" id="3_q1a1x"]
+[ext_resource type="Texture2D" uid="uid://cucc2h4totmfb" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan4.png" id="4_myo6c"]
+[ext_resource type="Texture2D" uid="uid://dcu0yr2es7x0u" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan5.png" id="5_b540g"]
+[ext_resource type="Texture2D" uid="uid://bb2pl7yt7lw8v" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/bon/bon0.png" id="6_lcqbd"]
+[ext_resource type="Texture2D" uid="uid://bvahdc075dnf1" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/bon/bon1.png" id="7_8oob1"]
+[ext_resource type="Texture2D" uid="uid://dlkh6aios8eyv" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/bon/bon2.png" id="8_q8lew"]
+[ext_resource type="Texture2D" uid="uid://buuwr0bpaqo3o" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/bon/bon3.png" id="9_t5sd2"]
+[ext_resource type="Texture2D" uid="uid://06dldppncip8" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips/lips0.png" id="10_snofi"]
+[ext_resource type="Texture2D" uid="uid://dk1vt8p3mg36c" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips/lips1.png" id="11_omt65"]
+[ext_resource type="Texture2D" uid="uid://bei8afdjs3o1b" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips/lips2.png" id="12_mxiss"]
+[ext_resource type="Texture2D" uid="uid://c7vgq1g0syphl" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips/lips3.png" id="13_ccmu8"]
+[ext_resource type="Texture2D" uid="uid://bu8dxuqwx6u88" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Lips/lips4.png" id="14_li1p4"]
+[ext_resource type="Texture2D" uid="uid://jy6jexlbc1ek" path="res://Assets/Sprites/Mini Pixel Pack 3/Effects/Explosion/tile000.png" id="15_0pnl1"]
+[ext_resource type="Texture2D" uid="uid://b3fvd7kkiy1ky" path="res://Assets/Sprites/Mini Pixel Pack 3/Effects/Explosion/tile001.png" id="16_r13i7"]
+[ext_resource type="Texture2D" uid="uid://fgh7ovk6xqaa" path="res://Assets/Sprites/Mini Pixel Pack 3/Effects/Explosion/tile002.png" id="17_thpms"]
+[ext_resource type="Texture2D" uid="uid://buwp7sskf5hw0" path="res://Assets/Sprites/Mini Pixel Pack 3/Effects/Explosion/tile003.png" id="18_cja5a"]
+[ext_resource type="Texture2D" uid="uid://b2tlecw15md6g" path="res://Assets/Sprites/Mini Pixel Pack 3/Effects/Explosion/tile004.png" id="19_volbs"]
+[ext_resource type="Texture2D" uid="uid://cmr10m8vdjkio" path="res://Assets/Sprites/Mini Pixel Pack 3/Effects/Explosion/tile005.png" id="20_142rx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7dm0r"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_0g74k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_w2igj")]
+}
+
+[sub_resource type="Animation" id="Animation_88l4d"]
+resource_name = "move_1"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_w2igj"), ExtResource("3_q1a1x"), ExtResource("4_myo6c"), ExtResource("5_b540g")]
+}
+
+[sub_resource type="Animation" id="Animation_1kogo"]
+resource_name = "move_2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_lcqbd"), ExtResource("7_8oob1"), ExtResource("8_q8lew"), ExtResource("9_t5sd2")]
+}
+
+[sub_resource type="Animation" id="Animation_fjjro"]
+resource_name = "move_3"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_snofi"), ExtResource("11_omt65"), ExtResource("12_mxiss"), ExtResource("13_ccmu8"), ExtResource("14_li1p4")]
+}
+
+[sub_resource type="Animation" id="Animation_e2d6s"]
+resource_name = "destroy"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_0pnl1"), ExtResource("16_r13i7"), ExtResource("17_thpms"), ExtResource("18_cja5a"), ExtResource("19_volbs"), ExtResource("20_142rx")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwxpk"]
+_data = {
+"RESET": SubResource("Animation_0g74k"),
+"destroy": SubResource("Animation_e2d6s"),
+"move_1": SubResource("Animation_88l4d"),
+"move_2": SubResource("Animation_1kogo"),
+"move_3": SubResource("Animation_fjjro")
+}
+
+[node name="Invader_Enemy" type="Area2D"]
+scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 34
+script = ExtResource("1_2t2jh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_w2igj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7dm0r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hwxpk")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
