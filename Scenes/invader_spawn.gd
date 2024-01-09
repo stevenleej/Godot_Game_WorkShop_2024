@@ -16,7 +16,7 @@ var movement_direction = 1
 var invader_scene = preload("res://Scenes/invader_enemy.tscn") # Initialize it here
 
 @onready var movement_timer = $MovementTimer
-
+@onready var shot_timer = $ShotTimer
 
 func _ready():
 	movement_timer.timeout.connect(move_invaders)
