@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://7r5dimifq24v"]
+
+[ext_resource type="Texture2D" uid="uid://8vwexc1qsc0d" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan (16 x 16).png" id="1_8d12p"]
+[ext_resource type="PackedScene" uid="uid://1brucyyxikus" path="res://PlayerControllerAssets_To_be_organized/Player.tscn" id="2_xtll4"]
+[ext_resource type="Texture2D" uid="uid://kf4bqkj4mywg" path="res://Assets/Sprites/Mini Pixel Pack 3/Space_BG (2 frames) (64 x 64).png" id="3_yksjo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+position = Vector2(553, 321)
+scale = Vector2(3, 3)
+texture = ExtResource("1_8d12p")
+hframes = 6
+
+[node name="Player" parent="." instance=ExtResource("2_xtll4")]
+position = Vector2(555, 562)
+scale = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_mirroring = Vector2(600, 600)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(503, 285.5)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_yksjo")
