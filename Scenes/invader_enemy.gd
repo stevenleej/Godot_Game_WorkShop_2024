@@ -11,6 +11,17 @@ func _ready():
 	animation_player.play(config.animation_name)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_area_entered(area):
+	if area is Laser :
+		print_debug("collision with laser")
+		animation_player.play("destroy")
+		area.queue_free()
+		queue_free()
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "destroy":
+		queue_free()
+
+func TakeDamage() -> void:
+	print_debug("test")

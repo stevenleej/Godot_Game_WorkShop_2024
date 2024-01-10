@@ -1,38 +1,80 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj6yfl0pk6bh5"]
+[gd_scene load_steps=5 format=3 uid="uid://dj6yfl0pk6bh5"]
 
 [ext_resource type="PackedScene" uid="uid://m0gfoyhrf4ej" path="res://Scenes/invader_spawn.tscn" id="1_q3q1v"]
+[ext_resource type="PackedScene" uid="uid://1brucyyxikus" path="res://PlayerControllerAssets/Player.tscn" id="2_qykbc"]
+[ext_resource type="Texture2D" uid="uid://b13ywjhl0lj1x" path="res://Assets/Sprites/Mini Pixel Pack 3/Space_BG (2 frames) (64 x 64).png" id="3_qg87l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vbgs"]
-size = Vector2(379.5, 1176)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3efuo"]
+size = Vector2(21, 652)
 
 [node name="main" type="Node"]
 
 [node name="Invader_Spawn" parent="." instance=ExtResource("1_q3q1v")]
-position = Vector2(18, 47)
+position = Vector2(0, -190)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Wall" type="Node" parent="."]
+[node name="Walls" type="Node" parent="."]
 
-[node name="RightWall" type="Area2D" parent="Wall"]
+[node name="RightWall" type="Area2D" parent="Walls"]
+collision_layer = 32
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/RightWall"]
-position = Vector2(976.75, 167)
-shape = SubResource("RectangleShape2D_8vbgs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(575.5, 3)
+shape = SubResource("RectangleShape2D_3efuo")
 
-[node name="LeftWall" type="Area2D" parent="Wall"]
+[node name="LeftWall" type="Area2D" parent="Walls"]
+position = Vector2(-1150, 0)
+collision_layer = 32
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/LeftWall"]
-position = Vector2(1, 320)
-shape = SubResource("RectangleShape2D_8vbgs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+position = Vector2(575.5, 3)
+shape = SubResource("RectangleShape2D_3efuo")
 
-[node name="TopWall" type="Area2D" parent="Wall"]
-position = Vector2(4, 0)
+[node name="Player" parent="." instance=ExtResource("2_qykbc")]
+position = Vector2(2, 468)
+scale = Vector2(4, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/TopWall"]
-position = Vector2(570, 3)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_8vbgs")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[connection signal="area_entered" from="Wall/RightWall" to="Invader_Spawn" method="_on_right_wall_area_entered"]
-[connection signal="area_entered" from="Wall/LeftWall" to="Invader_Spawn" method="_on_left_wall_area_entered"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+scroll_offset = Vector2(135.969, 24.3896)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(-189, -775)
+motion_mirroring = Vector2(600, 600)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(503, 285.5)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_qg87l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(2407, 286)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_qg87l")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(2407, 1530)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_qg87l")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(495, 1530)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_qg87l")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(-1389, 1530)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_qg87l")
+
+[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(-1389, 286)
+scale = Vector2(10.4844, 11.3281)
+texture = ExtResource("3_qg87l")
+
+[connection signal="area_entered" from="Walls/RightWall" to="Invader_Spawn" method="_on_right_wall_area_entered"]
+[connection signal="area_entered" from="Walls/LeftWall" to="Invader_Spawn" method="_on_left_wall_area_entered"]

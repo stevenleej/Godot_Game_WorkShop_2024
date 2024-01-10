@@ -9,3 +9,5 @@ script = ExtResource("1_bt2ah")
 [node name="MovementTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
+
+[node name="ShotTimer" type="Timer" parent="."]

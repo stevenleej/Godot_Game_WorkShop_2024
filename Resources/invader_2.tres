@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dsup227msx5eq"]
+[gd_resource type="Resource" script_class="InvaderResource" load_steps=3 format=3 uid="uid://dsup227msx5eq"]
 
 [ext_resource type="Script" path="res://Resources/invader_config.gd" id="1_4s7jn"]
-[ext_resource type="Texture2D" uid="uid://bb2pl7yt7lw8v" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/bon/bon0.png" id="2_4nube"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/bon/bon0.png" id="2_4nube"]
 
 [resource]
 script = ExtResource("1_4s7jn")
