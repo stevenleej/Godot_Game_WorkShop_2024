@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://m0gfoyhrf4ej" path="res://Scenes/invader_spawn.tscn" id="1_q3q1v"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_re16x"]
-[ext_resource type="PackedScene" uid="uid://1brucyyxikus" path="res://PlayerControllerAssets/Player.tscn" id="2_qykbc"]
+[ext_resource type="PackedScene" uid="uid://bqddktqunvjg6" path="res://Scenes/Player.tscn" id="2_qykbc"]
 [ext_resource type="Texture2D" uid="uid://b13ywjhl0lj1x" path="res://Assets/Sprites/Mini Pixel Pack 3/Space_BG (2 frames) (64 x 64).png" id="3_qg87l"]
 [ext_resource type="AudioStream" uid="uid://b2u43uh7j61kl" path="res://Assets/Audio/boss_battle_#2.WAV" id="5_7qkfn"]
 [ext_resource type="PackedScene" uid="uid://e074kco71yf8" path="res://Scenes/GameOver.tscn" id="6_0g72a"]

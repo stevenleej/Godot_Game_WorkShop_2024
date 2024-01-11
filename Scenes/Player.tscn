@@ -1,15 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://1brucyyxikus"]
+[gd_scene load_steps=3 format=3 uid="uid://bqddktqunvjg6"]
 
-[ext_resource type="Script" path="res://PlayerControllerAssets/PlayerController.gd" id="1_qrali"]
-[ext_resource type="PackedScene" uid="uid://dh1l5ycfxh11b" path="res://PlayerControllerAssets/PlayerSprite.tscn" id="2_vfujy"]
+[ext_resource type="PackedScene" uid="uid://dh1l5ycfxh11b" path="res://Scenes/PlayerSprite.tscn" id="2_vfujy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rewqf"]
 radius = 5.30773
 height = 21.8749
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerSprite")]
-script = ExtResource("1_qrali")
-playerSprite = NodePath("PlayerSprite")
+[node name="Player" type="CharacterBody2D"]
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 scale = Vector2(1.31883, 1.00572)
@@ -18,6 +15,7 @@ shape = SubResource("CapsuleShape2D_rewqf")
 [node name="PlayerSprite" parent="." instance=ExtResource("2_vfujy")]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
+script = null
 
 [node name="BulletCoolDown" type="Timer" parent="."]
 autostart = true

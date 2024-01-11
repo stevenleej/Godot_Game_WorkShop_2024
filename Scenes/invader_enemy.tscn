@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://1hev42o40x6e"]
+[gd_scene load_steps=21 format=3 uid="uid://1hev42o40x6e"]
 
-[ext_resource type="Script" path="res://Scenes/invader_enemy.gd" id="1_2t2jh"]
 [ext_resource type="Texture2D" uid="uid://dbo6sux3vh30t" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan0.png" id="2_w2igj"]
 [ext_resource type="Texture2D" uid="uid://dti54ijjrtwps" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan3.png" id="3_q1a1x"]
 [ext_resource type="Texture2D" uid="uid://cucc2h4totmfb" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan4.png" id="4_myo6c"]
@@ -100,7 +99,6 @@ _data = {
 scale = Vector2(4, 4)
 collision_layer = 4
 collision_mask = 39
-script = ExtResource("1_2t2jh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
