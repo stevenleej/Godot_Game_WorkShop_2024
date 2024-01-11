@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://1hev42o40x6e"]
+[gd_scene load_steps=22 format=3 uid="uid://1hev42o40x6e"]
 
 [ext_resource type="Script" path="res://Scenes/invader_enemy.gd" id="1_2t2jh"]
 [ext_resource type="Texture2D" uid="uid://dbo6sux3vh30t" path="res://Assets/Sprites/Mini Pixel Pack 3/Enemies/Alan/alan0.png" id="2_w2igj"]
@@ -32,6 +32,9 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_w2igj")]
 }
+
+[sub_resource type="Animation" id="Animation_dl3uu"]
+resource_name = "dead"
 
 [sub_resource type="Animation" id="Animation_88l4d"]
 resource_name = "move_1"
@@ -87,6 +90,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwxpk"]
 _data = {
 "RESET": SubResource("Animation_0g74k"),
+"dead": SubResource("Animation_dl3uu"),
 "move_1": SubResource("Animation_88l4d"),
 "move_2": SubResource("Animation_1kogo"),
 "move_3": SubResource("Animation_fjjro")
@@ -95,7 +99,7 @@ _data = {
 [node name="Invader_Enemy" type="Area2D"]
 scale = Vector2(4, 4)
 collision_layer = 4
-collision_mask = 38
+collision_mask = 39
 script = ExtResource("1_2t2jh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -109,3 +113,6 @@ shape = SubResource("CircleShape2D_7dm0r")
 libraries = {
 "": SubResource("AnimationLibrary_hwxpk")
 }
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

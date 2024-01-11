@@ -30,5 +30,7 @@ func _on_body_entered(body):
 func _on_area_entered(area):
 		#delete the entity
 		print_debug(area)
+		get_parent().get_child(0).find_child("Player").playerScore += 1
+		print_debug(get_parent().get_child(0).find_child("Player").playerScore)
 		area.queue_free()
 		queue_free()

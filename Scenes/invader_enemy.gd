@@ -11,17 +11,14 @@ func _ready():
 	animation_player.play(config.animation_name)
 
 
-func _on_area_entered(area):
-	if area is Laser :
-		print_debug("collision with laser")
-		animation_player.play("destroy")
-		area.queue_free()
-		queue_free()
-
-
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "destroy":
 		queue_free()
 
-func TakeDamage() -> void:
-	print_debug("test")
+
+
+func _on_body_entered(body):
+	if body.get_collision_layer() == 1:
+		print_debug("player collided")
+		body.Explode()
+

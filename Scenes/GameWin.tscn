@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c60fx4v0qpx8n"]
+
+[ext_resource type="Texture2D" uid="uid://dfdtf6nomc558" path="res://Assets/Sprites/Mini Pixel Pack 3/UI objects/Number_font (8 x 8).png" id="1_bjpnv"]
+
+[node name="GameWin" type="Node2D"]
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bjpnv")
+hframes = 5
+vframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(9, 0)
+texture = ExtResource("1_bjpnv")
+hframes = 5
+vframes = 2
+frame = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(19, 0)
+texture = ExtResource("1_bjpnv")
+hframes = 5
+vframes = 2
+frame = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(29, 0)
+texture = ExtResource("1_bjpnv")
+hframes = 5
+vframes = 2
+frame = 6

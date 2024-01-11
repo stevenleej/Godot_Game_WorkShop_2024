@@ -13,3 +13,6 @@ func PlayLeftAnimation() -> void:
 
 func PlayRightAnimation() -> void:
 	%AnimationPlayer.play("right")
+	
+func PlayDeadAnimation() -> void:
+	%AnimationPlayer.play("dead")

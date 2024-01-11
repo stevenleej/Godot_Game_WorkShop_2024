@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj6yfl0pk6bh5"]
+[gd_scene load_steps=9 format=3 uid="uid://dj6yfl0pk6bh5"]
 
 [ext_resource type="PackedScene" uid="uid://m0gfoyhrf4ej" path="res://Scenes/invader_spawn.tscn" id="1_q3q1v"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_re16x"]
 [ext_resource type="PackedScene" uid="uid://1brucyyxikus" path="res://PlayerControllerAssets/Player.tscn" id="2_qykbc"]
 [ext_resource type="Texture2D" uid="uid://b13ywjhl0lj1x" path="res://Assets/Sprites/Mini Pixel Pack 3/Space_BG (2 frames) (64 x 64).png" id="3_qg87l"]
+[ext_resource type="AudioStream" uid="uid://b2u43uh7j61kl" path="res://Assets/Audio/boss_battle_#2.WAV" id="5_7qkfn"]
+[ext_resource type="PackedScene" uid="uid://e074kco71yf8" path="res://Scenes/GameOver.tscn" id="6_0g72a"]
+[ext_resource type="PackedScene" uid="uid://c60fx4v0qpx8n" path="res://Scenes/GameWin.tscn" id="7_m2wo0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3efuo"]
 size = Vector2(21, 652)
 
 [node name="main" type="Node"]
+script = ExtResource("1_re16x")
 
 [node name="Invader_Spawn" parent="." instance=ExtResource("1_q3q1v")]
 position = Vector2(0, -190)
@@ -34,6 +39,7 @@ position = Vector2(575.5, 3)
 shape = SubResource("RectangleShape2D_3efuo")
 
 [node name="Player" parent="." instance=ExtResource("2_qykbc")]
+unique_name_in_owner = true
 position = Vector2(2, 468)
 scale = Vector2(4, 4)
 
@@ -75,6 +81,20 @@ texture = ExtResource("3_qg87l")
 position = Vector2(-1389, 286)
 scale = Vector2(10.4844, 11.3281)
 texture = ExtResource("3_qg87l")
+
+[node name="GameAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7qkfn")
+autoplay = true
+
+[node name="GameOver" parent="." instance=ExtResource("6_0g72a")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-4, 209)
+
+[node name="GameWin" parent="." instance=ExtResource("7_m2wo0")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-168, 109)
 
 [connection signal="area_entered" from="Walls/RightWall" to="Invader_Spawn" method="_on_right_wall_area_entered"]
 [connection signal="area_entered" from="Walls/LeftWall" to="Invader_Spawn" method="_on_left_wall_area_entered"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://e074kco71yf8"]
+
+[ext_resource type="Texture2D" uid="uid://cy0po5so4cgqb" path="res://Assets/Sprites/Mini Pixel Pack 3/UI objects/GAME_OVER (72 x 8).png" id="1_0r5hv"]
+
+[node name="GameOver" type="Node2D"]
+scale = Vector2(8, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0r5hv")
